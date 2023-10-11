@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+      <Authors>Wilderness Labs, Inc</Authors>
+      <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+      <TargetFramework>netstandard2.1</TargetFramework>
+      <AssemblyName>Meadow.MBus</AssemblyName>
+      <Company>Wilderness Labs, Inc</Company>
+      <PackageProjectUrl>http://developer.wildernesslabs.co/Meadow/</PackageProjectUrl>
+      <PackageId>Meadow.MBus</PackageId>
+      <PackageIcon>icon.png</PackageIcon>
+      <RepositoryUrl>https://github.com/WildernessLabs/Meadow.MBus</RepositoryUrl>
+      <PackageTags>Meadow;M-Bus;MeterBus;MBus</PackageTags>
+      <Version>0.23.0</Version>
+      <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+      <GenerateDocumentationFile>true</GenerateDocumentationFile>
+      <RootNamespace>Meadow.MBus</RootNamespace>
+      <Nullable>enable</Nullable>
+      <Description>A Library for using M-Bus Communication</Description>
+      <LangVersion>10.0</LangVersion>
+      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Meadow.Core\source\Meadow.Core\Meadow.Core.csproj" />
+  </ItemGroup>
+
+</Project>
