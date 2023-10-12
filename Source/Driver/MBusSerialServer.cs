@@ -12,6 +12,8 @@ namespace Meadow.MBus;
 public class MBusSerialServer : IMBusServer
 {
     private byte[] _rxBuffer = new byte[1024];
+    private bool _fcb = true;
+    private Control? _lastCommand = null;
 
     private ISerialPort Port { get; }
 
@@ -39,10 +41,15 @@ public class MBusSerialServer : IMBusServer
     /// <inheritdoc/>
     public void SendControl(byte clientAddress, byte controlInfo)
     {
+        if (_lastCommand != Control.SND_UD) _fcb = true;
+
         var telegram = new ControlTelegram(
             Control.SND_UD | Control.FCB,
             clientAddress,
             controlInfo);
+
+        _fcb = !_fcb;
+        _lastCommand = Control.SND_UD;
 
         WriteTelegram(telegram);
     }
@@ -50,9 +57,14 @@ public class MBusSerialServer : IMBusServer
     /// <inheritdoc/>
     public byte[] RequestUserData1(byte clientAddress)
     {
+        if (_lastCommand != Control.REQ_UD1) _fcb = true;
+
         var telegram = new ShortTelegram(
             Control.REQ_UD1 | Control.FCB,
             clientAddress);
+
+        _fcb = !_fcb;
+        _lastCommand = Control.REQ_UD1;
 
         return WriteTelegram(telegram);
     }
@@ -60,16 +72,26 @@ public class MBusSerialServer : IMBusServer
     /// <inheritdoc/>
     public byte[] RequestUserData2(byte clientAddress)
     {
+        if (_lastCommand != Control.REQ_UD2) _fcb = true;
+
         var telegram = new ShortTelegram(
-            Control.REQ_UD2 | Control.FCB,
+            Control.REQ_UD2 | (_fcb ? Control.FCB : 0),
             clientAddress);
+
+        _fcb = !_fcb;
+        _lastCommand = Control.REQ_UD2;
 
         return WriteTelegram(telegram);
     }
 
     public void InitializeClient(byte clientAddress)
     {
+        if (_lastCommand != Control.SND_NKE) _fcb = true;
+
         var frame = new ShortTelegram(Control.SND_NKE, clientAddress);
+
+        _fcb = !_fcb;
+        _lastCommand = Control.SND_NKE;
 
         WriteTelegram(frame);
     }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Meadow.MBus;
 
@@ -66,7 +67,93 @@ public abstract record Telegram : ITelegram
     /// <returns>The decoded data as an object.</returns>
     public static object? Decode(byte[] record)
     {
-        return Decode(record[0], record[1], record[2..]);
+        var index = 0;
+        var dife = new List<byte>();
+        byte? vife = null;
+
+        var dif = record[index++];
+        if ((dif & 0x80) != 0)
+        {
+            byte d;
+
+            do
+            {
+                d = record[index++];
+                dife.Add(d);
+            } while ((d & 0x80) != 0);
+        }
+        var vif = record[index++];
+        if ((vif & 0x80) != 0)
+        {
+            vife = record[index];
+        }
+
+        if (dife.Count > 0)
+        {
+            return DecodeExtendedDif(dif, dife.ToArray(), record[index..]);
+        }
+        else if (vife != null)
+        {
+            return DecodeExtendedVif(dif, vif, vife.Value, record[index..]);
+        }
+
+        return DecodeStandard(record[0], record[1], record[2..]);
+    }
+
+    public static object DecodeExtendedDif(byte dif, byte[] dife, byte[] data)
+    {
+        dif = (byte)(dif & 0x7f);
+
+        switch (dif)
+        {
+            case 0x05: // 32-bit float
+                return DecodeFloat(data[0..], 4);
+        }
+
+        throw new NotImplementedException();
+    }
+
+    public static object DecodeExtendedVif(byte dif, byte vif, byte vife, byte[] data)
+    {
+        var index = 0;
+        byte unit;
+        byte manufCode;
+
+        switch (vif)
+        {
+            case 0xfd:
+                // first byte is a unit
+                unit = data[index++];
+                if (data[index++] == 0xff) // next byte is manufacturer-specific
+                {
+                    manufCode = data[index++];
+                }
+
+                switch (dif)
+                {
+                    case 0x05: // 32-bit float
+                        return DecodeFloat(data[index..], 4);
+                }
+
+                break;
+            default:
+                unit = (byte)(vif & 0x7f);
+
+                if (data[index++] == 0xff) // next byte is manufacturer-specific
+                {
+                    manufCode = data[index++];
+                }
+
+                switch (dif)
+                {
+                    case 0x05: // 32-bit float
+                        return DecodeFloat(data[index..], 4);
+                }
+
+                break;
+        }
+
+        throw new NotImplementedException();
     }
 
     /// <summary>
@@ -76,10 +163,10 @@ public abstract record Telegram : ITelegram
     /// <param name="vif">The VIF (Value Information Field) value.</param>
     /// <param name="data">The data array to decode.</param>
     /// <returns>The decoded object based on the DIF, VIF, and data.</returns>
-    public static object? Decode(byte dif, byte vif, byte[] data)
+    public static object? DecodeStandard(byte dif, byte vif, byte[] data)
     {
         // only the lower nibble matters
-        switch (dif & 0xf)
+        switch (dif & 0x0f)
         {
             case 0x00: // no data
                 return 0;
@@ -106,7 +193,8 @@ public abstract record Telegram : ITelegram
 
                 }
             case 0x05: // 4-byte single/float
-                throw new NotImplementedException();
+                return DecodeFloat(data, 4);
+            // if the high-bit is on, this is an extended VIF
             case 0x06: // 24-bit
                 switch (vif)
                 {
@@ -127,6 +215,8 @@ public abstract record Telegram : ITelegram
                 return (int)DecodeBcd(data, 6);
             case 0x0c: // 8-digit BCD
                 return (int)DecodeBcd(data, 8);
+            case 0x0d: // variable length
+                throw new NotImplementedException();
             case 0x0e: // 12-digit BCD
                 return DecodeBcd(data, 8);
             default:
@@ -134,6 +224,12 @@ public abstract record Telegram : ITelegram
                 throw new NotImplementedException();
 
         }
+    }
+
+    private static float DecodeFloat(byte[] data, int length)
+    {
+        var f = BitConverter.ToSingle(data, 0);
+        return f;
     }
 
     private static long DecodeBcd(byte[] data, int length)

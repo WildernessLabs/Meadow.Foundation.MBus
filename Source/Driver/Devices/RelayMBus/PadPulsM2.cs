@@ -1,19 +1,14 @@
-﻿using System;
-using System.Threading;
-
-namespace Meadow.MBus.Devices.RelayMBus;
+﻿namespace Meadow.MBus.Devices.RelayMBus;
 
 /// <summary>
 /// Represents a Relay M-Bus PadPuls M2 device for MBus communication.
 /// </summary>
-public partial class PadPulsM2 : IDisposable
+public partial class PadPulsM2 : MBusDeviceBase
 {
     private const byte Address = 0xfe;
     private const byte CI_SelectPort = 0x51;
 
     private readonly IMBusServer _server;
-    private Timer _refreshTimer;
-    private bool _refreshing;
 
     internal enum PortIdentifier : byte
     {
@@ -40,25 +35,16 @@ public partial class PadPulsM2 : IDisposable
                 new Port(PortIdentifier.Port2),
             };
 
-        _refreshTimer = new Timer(TimerProc, null, 0, 5000);
     }
 
-    private void TimerProc(object? state)
+    protected override void DoRefresh()
     {
-        if (_refreshing) return;
-        _refreshing = true;
-        foreach (var p in Ports)
+        foreach (var port in Ports)
         {
-            RefreshPort(p);
+            SelectPort(port.PortIdentifier);
+            var info = GetSelectedPortInfo();
+            port.Update(info);
         }
-        _refreshing = false;
-    }
-
-    private void RefreshPort(Port port)
-    {
-        SelectPort(port.PortIdentifier);
-        var info = GetSelectedPortInfo();
-        port.Update(info);
     }
 
     private void SelectPort(PortIdentifier port)
@@ -78,11 +64,5 @@ public partial class PadPulsM2 : IDisposable
         var response = _server.RequestUserData2(Address);
 
         return response;
-    }
-
-    /// <inheritdoc/>
-    public void Dispose()
-    {
-        _refreshTimer.Dispose();
     }
 }
