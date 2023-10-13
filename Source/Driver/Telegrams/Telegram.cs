@@ -88,72 +88,49 @@ public abstract record Telegram : ITelegram
             vife = record[index];
         }
 
-        if (dife.Count > 0)
+        if (dife.Count > 0 || vife != null)
         {
-            return DecodeExtendedDif(dif, dife.ToArray(), record[index..]);
-        }
-        else if (vife != null)
-        {
-            return DecodeExtendedVif(dif, vif, vife.Value, record[index..]);
+            return DecodeExtended(dif, dife.ToArray(), vif, vife, record[index..]);
         }
 
         return DecodeStandard(record[0], record[1], record[2..]);
     }
 
-    public static object DecodeExtendedDif(byte dif, byte[] dife, byte[] data)
-    {
-        dif = (byte)(dif & 0x7f);
-
-        switch (dif)
-        {
-            case 0x05: // 32-bit float
-                return DecodeFloat(data[0..], 4);
-        }
-
-        throw new NotImplementedException();
-    }
-
-    public static object DecodeExtendedVif(byte dif, byte vif, byte vife, byte[] data)
+    public static object? DecodeExtended(byte dif, byte[] dife, byte vif, byte? vife, byte[] data)
     {
         var index = 0;
         byte unit;
         byte manufCode;
 
+        // TODO: do something with dife if it exists
+        dif = (byte)(dif & 0x7f); // clear the extended bit if it's there
+
         switch (vif)
         {
             case 0xfd:
                 // first byte is a unit
+                // TODO: do something with the Unit here
                 unit = data[index++];
                 if (data[index++] == 0xff) // next byte is manufacturer-specific
                 {
+                    // TODO: do something with the Manufacturer code
                     manufCode = data[index++];
                 }
 
-                switch (dif)
-                {
-                    case 0x05: // 32-bit float
-                        return DecodeFloat(data[index..], 4);
-                }
+                return DecodeStandard(dif, vif, data[index..]);
 
-                break;
             default:
+                // TODO: do something with the Unit here
                 unit = (byte)(vif & 0x7f);
 
                 if (data[index++] == 0xff) // next byte is manufacturer-specific
                 {
+                    // TODO: do something with the Manufacturer code
                     manufCode = data[index++];
                 }
 
-                switch (dif)
-                {
-                    case 0x05: // 32-bit float
-                        return DecodeFloat(data[index..], 4);
-                }
-
-                break;
+                return DecodeStandard(dif, vif, data[index..]);
         }
-
-        throw new NotImplementedException();
     }
 
     /// <summary>
