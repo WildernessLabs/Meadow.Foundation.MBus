@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace Meadow.MBus;
+namespace Meadow.Foundation.MBus;
 
 public abstract class MBusDeviceBase : IMBusDevice, IDisposable
 {

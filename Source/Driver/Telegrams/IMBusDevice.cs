@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Meadow.MBus;
+namespace Meadow.Foundation.MBus;
 
 public interface IMBusDevice
 {

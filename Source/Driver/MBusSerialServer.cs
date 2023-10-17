@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Threading;
 
-namespace Meadow.MBus;
+namespace Meadow.Foundation.MBus;
 
 /// <summary>
 /// Represents an MBus server using serial communication.

@@ -1,6 +1,6 @@
 ﻿using Meadow;
-using Meadow.MBus;
-using Meadow.MBus.Devices.Schneider;
+using Meadow.Foundation.MBus;
+using Meadow.Foundation.MBus.SchneiderElectric;
 
 internal class Program
 {

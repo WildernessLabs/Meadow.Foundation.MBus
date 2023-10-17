@@ -1,4 +1,4 @@
-﻿namespace Meadow.MBus;
+﻿namespace Meadow.Foundation.MBus;
 
 /// <summary>
 /// Interface representing a generic M-Bus telegram.

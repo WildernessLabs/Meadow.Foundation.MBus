@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Meadow.MBus.Devices.RelayMBus;
+namespace Meadow.Foundation.MBus.RelayMBus;
 
 public partial class PadPulsM2
 {

@@ -1,4 +1,4 @@
-﻿namespace Meadow.MBus;
+﻿namespace Meadow.Foundation.MBus;
 
 /// <summary>
 /// The types of metered mediums for M-Bus devices

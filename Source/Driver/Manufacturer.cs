@@ -1,4 +1,4 @@
-﻿namespace Meadow.MBus;
+﻿namespace Meadow.Foundation.MBus;
 
 /// <summary>
 /// Manufacturer identifiers for M-Bus devices

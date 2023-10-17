@@ -1,4 +1,4 @@
-﻿namespace Meadow.MBus.Devices.RelayMBus;
+﻿namespace Meadow.Foundation.MBus.RelayMBus;
 
 /// <summary>
 /// Represents a Relay M-Bus PadPuls M2 device for MBus communication.

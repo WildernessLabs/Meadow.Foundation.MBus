@@ -1,4 +1,4 @@
-﻿namespace Meadow.MBus;
+﻿namespace Meadow.Foundation.MBus;
 
 /// <summary>
 /// Represents a short telegram used in MBus communication.

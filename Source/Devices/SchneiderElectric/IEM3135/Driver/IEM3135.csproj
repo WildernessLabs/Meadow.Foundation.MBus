@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+    <LangVersion>10</LangVersion>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Authors>Wilderness Labs, Inc</Authors>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <OutputType>Library</OutputType>
+    <AssemblyName>IEM3135</AssemblyName>
+    <Company>Wilderness Labs, Inc</Company>
+    <PackageProjectUrl>http://developer.wildernesslabs.co/Meadow/Meadow.Foundation/</PackageProjectUrl>
+    <PackageId>Meadow.Foundation.MBus.SchneiderElectric.IEM3135</PackageId>
+    <PackageIcon>icon.png</PackageIcon>
+    <RepositoryUrl>https://github.com/WildernessLabs/Meadow.MBus</RepositoryUrl>
+    <PackageTags>Meadow.Foundation,M-Bus,Meter-Bus,IEM3135,Schneider Electric</PackageTags>
+    <Version>0.1.7</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>A library for interrfacing with the Schneider Electric iEM3135 electric meter over M-Bus</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+      <None Include="..\..\..\..\icon.png" Pack="true" PackagePath="" />
+      <ProjectReference Include="..\..\..\..\Driver\Meadow.MBus.csproj" />
+  </ItemGroup>
+
+</Project>

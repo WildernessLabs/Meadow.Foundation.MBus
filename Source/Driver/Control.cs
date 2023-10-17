@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Meadow.MBus;
+namespace Meadow.Foundation.MBus;
 
 /// <summary>
 /// Control flags for MBus communication.

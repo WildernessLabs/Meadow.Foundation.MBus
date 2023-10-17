@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Meadow.MBus;
+namespace Meadow.Foundation.MBus;
 
 /// <summary>
 /// Represents a telegram used in MBus communication.

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Meadow.MBus;
+namespace Meadow.Foundation.MBus;
 
 /// <summary>
 /// Represents a long telegram used in MBus communication.
