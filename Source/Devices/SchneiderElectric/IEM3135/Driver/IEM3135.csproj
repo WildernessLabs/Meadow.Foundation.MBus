@@ -1,9 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <PackageReadmeFile>Readme.md</PackageReadmeFile>
     <TargetFramework>netstandard2.1</TargetFramework>
     <Nullable>enable</Nullable>
-    <LangVersion>10</LangVersion>
+    <LangVersion>10.0</LangVersion>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Authors>Wilderness Labs, Inc</Authors>
@@ -22,6 +23,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include=".\Readme.md" Pack="true" PackagePath=""/>
       <None Include="..\..\..\..\icon.png" Pack="true" PackagePath="" />
       <ProjectReference Include="..\..\..\..\Driver\Meadow.MBus.csproj" />
   </ItemGroup>
