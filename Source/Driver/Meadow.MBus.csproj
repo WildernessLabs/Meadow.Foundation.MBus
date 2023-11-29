@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <PackageReadmeFile>Readme.md</PackageReadmeFile>
@@ -25,7 +25,7 @@
   <ItemGroup>
     <None Include=".\Readme.md" Pack="true" PackagePath=""/>
     <None Include="..\icon.png" Link="icon.png" Pack="true" PackagePath="" />
-    <ProjectReference Include="..\..\..\Meadow.Core\source\Meadow.Core\Meadow.Core.csproj" />
+    <PackageReference Include="Meadow" Version="1.5.0" />
   </ItemGroup>
 
 </Project>
