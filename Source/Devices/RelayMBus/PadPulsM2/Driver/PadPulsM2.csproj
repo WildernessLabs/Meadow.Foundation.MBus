@@ -17,7 +17,7 @@
     <PackageIcon>icon.png</PackageIcon>
     <RepositoryUrl>https://github.com/WildernessLabs/Meadow.MBus</RepositoryUrl>
     <PackageTags>Meadow.Foundation,M-Bus,Meter-Bus,PadPulsM2,Relay M-Bus</PackageTags>
-    <Version>0.1.7</Version>
+    <Version>1.6.0.1</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>A library for interrfacing with the Relay M-Bus PadPulsM2 pulse counter over M-Bus</Description>
   </PropertyGroup>
