@@ -23,7 +23,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include=".\Readme.md" Pack="true" PackagePath=""/>
+    <None Include=".\Readme.md" Pack="true" PackagePath="" />
     <None Include="..\icon.png" Link="icon.png" Pack="true" PackagePath="" />
     <ProjectReference Include="..\..\..\Meadow.Core\source\Meadow.Core\Meadow.Core.csproj" />
   </ItemGroup>

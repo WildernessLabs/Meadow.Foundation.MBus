@@ -23,7 +23,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include=".\Readme.md" Pack="true" PackagePath=""/>
+    <None Include=".\Readme.md" Pack="true" PackagePath="" />
       <None Include="..\..\..\..\icon.png" Pack="true" PackagePath="" />
       <ProjectReference Include="..\..\..\..\Driver\Meadow.MBus.csproj" />
   </ItemGroup>
