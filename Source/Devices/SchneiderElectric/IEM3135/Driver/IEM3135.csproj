@@ -17,13 +17,13 @@
     <PackageIcon>icon.png</PackageIcon>
     <RepositoryUrl>https://github.com/WildernessLabs/Meadow.MBus</RepositoryUrl>
     <PackageTags>Meadow.Foundation,M-Bus,Meter-Bus,IEM3135,Schneider Electric</PackageTags>
-    <Version>0.1.7</Version>
+    <Version>1.6.0.1</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>A library for interrfacing with the Schneider Electric iEM3135 electric meter over M-Bus</Description>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include=".\Readme.md" Pack="true" PackagePath=""/>
+    <None Include=".\Readme.md" Pack="true" PackagePath="" />
       <None Include="..\..\..\..\icon.png" Pack="true" PackagePath="" />
       <ProjectReference Include="..\..\..\..\Driver\Meadow.MBus.csproj" />
   </ItemGroup>
