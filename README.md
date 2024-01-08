@@ -1,5 +1,7 @@
 [![Develop Branch](https://github.com/WildernessLabs/Meadow.Foundation.MBus/actions/workflows/develop-ci.yml/badge.svg)](https://github.com/WildernessLabs/Meadow.Foundation.MBus/actions/workflows/develop-ci.yml)
 
+<img src="Design/Meadow.Foundation.MBus.jpg" style="margin-bottom:10px" />
+
 # Meadow.Foundation.MBus
 
 The Meadow.Foundation.MBus peripherals library is an open source repository of Meadow compatible drivers for hardware that supports the M-Bus communication protocol. Meadow.Foundation.MBus is part of the open source driver and peripheral library [Meadow.Foundation](http://developer.wildernesslabs.co/Meadow/Meadow.Foundation/Peripherals/).
