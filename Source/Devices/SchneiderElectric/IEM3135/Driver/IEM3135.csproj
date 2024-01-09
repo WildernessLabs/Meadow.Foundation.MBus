@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <Version>1.7.0</Version>
     <PackageReadmeFile>Readme.md</PackageReadmeFile>
     <TargetFramework>netstandard2.1</TargetFramework>
     <Nullable>enable</Nullable>
@@ -17,7 +18,6 @@
     <PackageIcon>icon.png</PackageIcon>
     <RepositoryUrl>https://github.com/WildernessLabs/Meadow.MBus</RepositoryUrl>
     <PackageTags>Meadow.Foundation,M-Bus,Meter-Bus,IEM3135,Schneider Electric</PackageTags>
-    <Version>1.6.0.1</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>A library for interrfacing with the Schneider Electric iEM3135 electric meter over M-Bus</Description>
   </PropertyGroup>
