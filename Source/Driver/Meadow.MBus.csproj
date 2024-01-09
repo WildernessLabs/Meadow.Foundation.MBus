@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <Version>1.7.0</Version>
     <PackageReadmeFile>Readme.md</PackageReadmeFile>
     <Authors>Wilderness Labs, Inc</Authors>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
@@ -12,7 +13,6 @@
     <PackageIcon>icon.png</PackageIcon>
     <RepositoryUrl>https://github.com/WildernessLabs/Meadow.Foundation.MBus</RepositoryUrl>
     <PackageTags>Meadow;Meadow.Founadtion;M-Bus;MeterBus;MBus</PackageTags>
-    <Version>0.23.0</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <RootNamespace>Meadow.Foundation.MBus</RootNamespace>
@@ -23,9 +23,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include=".\Readme.md" Pack="true" PackagePath=""/>
+    <None Include=".\Readme.md" Pack="true" PackagePath="" />
     <None Include="..\icon.png" Link="icon.png" Pack="true" PackagePath="" />
-    <PackageReference Include="Meadow" Version="1.6.0" />
+    <PackageReference Include="Meadow" Version="1.7.0" />
   </ItemGroup>
 
 </Project>
