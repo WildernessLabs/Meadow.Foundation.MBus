@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <Version>1.7.0</Version>
     <PackageReadmeFile>Readme.md</PackageReadmeFile>
     <TargetFramework>netstandard2.1</TargetFramework>
     <Nullable>enable</Nullable>
@@ -17,13 +18,12 @@
     <PackageIcon>icon.png</PackageIcon>
     <RepositoryUrl>https://github.com/WildernessLabs/Meadow.MBus</RepositoryUrl>
     <PackageTags>Meadow.Foundation,M-Bus,Meter-Bus,PadPulsM2,Relay M-Bus</PackageTags>
-    <Version>0.1.7</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>A library for interrfacing with the Relay M-Bus PadPulsM2 pulse counter over M-Bus</Description>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include=".\Readme.md" Pack="true" PackagePath=""/>
+    <None Include=".\Readme.md" Pack="true" PackagePath="" />
       <None Include="..\..\..\..\icon.png" Pack="true" PackagePath="" />
       <ProjectReference Include="..\..\..\..\Driver\Meadow.MBus.csproj" />
   </ItemGroup>
