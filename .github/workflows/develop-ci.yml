@@ -58,6 +58,13 @@ jobs:
         path: Meadow.Modbus
         ref: develop
 
+    - name: Checkout Meadow.Foundation
+      uses: actions/checkout@v3
+      with:
+        repository: WildernessLabs/Meadow.Foundation
+        path: Meadow.Foundation
+        ref: develop
+
     - name: Checkout Meadow.Foundation.MBus
       uses: actions/checkout@v3
       with:
