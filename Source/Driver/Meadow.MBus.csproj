@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Version>1.9.0</Version>
+    <Version>1.11.0</Version>
     <PackageReadmeFile>Readme.md</PackageReadmeFile>
     <Authors>Wilderness Labs, Inc</Authors>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
@@ -25,7 +25,7 @@
   <ItemGroup>
     <None Include=".\Readme.md" Pack="true" PackagePath="" />
     <None Include="..\icon.png" Link="icon.png" Pack="true" PackagePath="" />
-    <PackageReference Include="Meadow" Version="1.9.0" />
+    <PackageReference Include="Meadow" Version="1.11.0" />
   </ItemGroup>
 
 </Project>
