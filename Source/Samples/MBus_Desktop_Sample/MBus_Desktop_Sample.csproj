@@ -2,13 +2,13 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Meadow.Windows" Version="1.9.0" />
+    <PackageReference Include="Meadow.Windows" Version="1.11.0" />
     <ProjectReference Include="..\..\Devices\SchneiderElectric\IEM3135\Driver\IEM3135.csproj" />
     <ProjectReference Include="..\..\Driver\Meadow.MBus.csproj" />
   </ItemGroup>
