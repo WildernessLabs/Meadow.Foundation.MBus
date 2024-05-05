@@ -47,6 +47,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Graphics.MicroGraphics", ".
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Meadow.Foundation.Core", "..\..\Meadow.Foundation\Source\Meadow.Foundation.Core\Meadow.Foundation.Core.csproj", "{7494EBA6-1820-418F-B651-3289F9D66B04}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Serialization.MicroJson", "..\..\Meadow.Foundation\Source\Meadow.Foundation.Libraries_and_Frameworks\Serialization.MicroJson\Driver\Serialization.MicroJson.csproj", "{59984AC5-BDED-4A99-98A9-1DEF0876527E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Displays.Silk", "..\..\Meadow.Foundation\Source\Meadow.Foundation.Peripherals\Displays.Silk\Driver\Displays.Silk.csproj", "{EC000421-3BC1-4C61-A738-3FF64F3F544E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -119,6 +123,14 @@ Global
 		{7494EBA6-1820-418F-B651-3289F9D66B04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7494EBA6-1820-418F-B651-3289F9D66B04}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7494EBA6-1820-418F-B651-3289F9D66B04}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{59984AC5-BDED-4A99-98A9-1DEF0876527E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59984AC5-BDED-4A99-98A9-1DEF0876527E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59984AC5-BDED-4A99-98A9-1DEF0876527E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59984AC5-BDED-4A99-98A9-1DEF0876527E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC000421-3BC1-4C61-A738-3FF64F3F544E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC000421-3BC1-4C61-A738-3FF64F3F544E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC000421-3BC1-4C61-A738-3FF64F3F544E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC000421-3BC1-4C61-A738-3FF64F3F544E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -142,6 +154,8 @@ Global
 		{1DA36E63-DA83-4180-946E-20587895A3EB} = {AD309A9D-9EE5-45B5-B3D8-3F4F61C36741}
 		{EEAE0603-ECD8-44EC-81F4-C0EE4EC7F8FA} = {AD309A9D-9EE5-45B5-B3D8-3F4F61C36741}
 		{7494EBA6-1820-418F-B651-3289F9D66B04} = {AD309A9D-9EE5-45B5-B3D8-3F4F61C36741}
+		{59984AC5-BDED-4A99-98A9-1DEF0876527E} = {AD309A9D-9EE5-45B5-B3D8-3F4F61C36741}
+		{EC000421-3BC1-4C61-A738-3FF64F3F544E} = {AD309A9D-9EE5-45B5-B3D8-3F4F61C36741}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BA8CFA32-55F8-4175-8000-7F0DAD8AC3DE}
