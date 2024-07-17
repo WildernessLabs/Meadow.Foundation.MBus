@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Meadow.Windows" Version="1.12.0" />
+    <PackageReference Include="Meadow.Windows" Version="1.12.8.1-beta" />
     <ProjectReference Include="..\..\Devices\SchneiderElectric\IEM3135\Driver\IEM3135.csproj" />
     <ProjectReference Include="..\..\Driver\Meadow.MBus.csproj" />
   </ItemGroup>
