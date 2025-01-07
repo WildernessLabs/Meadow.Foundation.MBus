@@ -1,6 +1,5 @@
 ﻿using Meadow.Hardware;
 using System;
-using System.Diagnostics;
 using System.IO;
 using System.Threading;
 
@@ -112,7 +111,7 @@ public class MBusSerialServer : IMBusServer
             Port.ReadTimeout = TimeSpan.FromSeconds(1);
         }
 
-        Debug.WriteLine($"TX-Buffer:\r\n{BitConverter.ToString(frameData)}");
+        Resolver.Log.Debug($"TX-Buffer:\r\n{BitConverter.ToString(frameData)}");
         Port.Write(frameData);
 
         // wait for ack
@@ -123,7 +122,7 @@ public class MBusSerialServer : IMBusServer
 
             var read = Port.Read(_rxBuffer, 0, _rxBuffer.Length);
 
-            Debug.WriteLine($"Read: {read}");
+            Resolver.Log.Debug($"Read: {read}");
 
             if (read == 0)
             {
@@ -139,7 +138,7 @@ public class MBusSerialServer : IMBusServer
 
             var data = new byte[read];
             Array.Copy(_rxBuffer, data, read);
-            Debug.WriteLine($"RX-Buffer:\r\n{BitConverter.ToString(data)}");
+            Resolver.Log.Debug($"RX-Buffer:\r\n{BitConverter.ToString(data)}");
             return data;
 
         }
