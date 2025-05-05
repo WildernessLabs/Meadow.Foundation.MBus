@@ -17,7 +17,7 @@
     <RootNamespace>Meadow.Foundation.MBus</RootNamespace>
     <Nullable>enable</Nullable>
     <Description>A Library for using M-Bus Communication</Description>
-    <LangVersion>12.0</LangVersion>
+    <LangVersion>12</LangVersion>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
