@@ -74,7 +74,7 @@ public class IEM3135 : MBusDeviceBase
     /// </summary>
     public Frequency? Frequency => _telegram1 == null ? null : new Frequency(Convert.ToSingle(Telegram.Decode(_telegram1[230..])));
 
-    // <summary>
+    /// <summary>
     /// Gets the total active energy export.
     /// </summary>
     public ulong? TotalActiveEnergyExport => _telegram2 == null ? null : Convert.ToUInt64(Telegram.Decode(_telegram2[19..]));
