@@ -18,7 +18,7 @@ public enum Medium : byte
     CoolingLoadOut = 10,
     CoolingLoadIn = 11,
     HeatIn = 12,
-    HeetCoolLoad = 13,
+    HeatCoolLoad = 13,
     BusSystem = 14,
     Unknown = 15
 }
